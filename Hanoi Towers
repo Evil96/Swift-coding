@@ -1,0 +1,26 @@
+//Author: Edgar Vilchis
+//Date of creation: Nov 4, 018
+//Last update: Nov 4, 018
+//Hanoi Towers
+//Parameters: n discs, towers
+
+let torre1 = 1
+let torre2 = 2
+let torre3 = 3
+let n = 3 //Number of discs
+
+func hanoi(n: Int, ori: Int, des: Int, aux: Int){
+    if n == 1{
+        print("Move disc \(n) from tower \(ori) to tower \(des)")
+        
+        return
+    }
+    
+    hanoi(n: n-1, ori: ori, des: des, aux: aux)
+    
+    print("Move disc \(n) from tower \(ori) to tower \(des)")
+    
+    hanoi(n: n-1, ori: aux, des: des, aux: ori)
+}
+
+hanoi(n: n, ori: torre1, des: torre2, aux: torre3)
